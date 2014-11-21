@@ -1,10 +1,10 @@
 #include "pebble.h"
+#include "random_run.h"
 
 static Window *window;
 static Layer *window_layer;
 static TextLayer *timer_text_layer;
 static TextLayer *distance_text_layer;
-static AppTimer *run_timer;
 uint16_t current_time = 0;
 
 enum unit8_t {
@@ -39,14 +39,13 @@ void timer_time_str(uint16_t timer_time, bool showHours, char* str, int str_len)
   }
 }
 
-static void timer_tick(void* context) {
+static void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char formatted[9];
 
   timer_time_str(current_time, current_time >= 3600, formatted, 9);
 
   text_layer_set_text(timer_text_layer, formatted);
   layer_mark_dirty(text_layer_get_layer(timer_text_layer));
-  run_timer = app_timer_register(1000, timer_tick, (void*)context);
   current_time++;
 }
 
@@ -56,9 +55,11 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
     Tuple *distance;
 
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 0) {
-      distance  = dict_find(iter, KEY_DISTANCE);
+      distance     = dict_find(iter, KEY_DISTANCE);
+      current_time = 0;
+
       APP_LOG(APP_LOG_LEVEL_DEBUG, "START %s", distance->value->cstring);
-      run_timer = app_timer_register(1000, timer_tick, (void*)run_timer);
+      tick_timer_service_subscribe(SECOND_UNIT, &timer_tick);
 
       text_layer_set_text(distance_text_layer, distance->value->cstring);
       layer_mark_dirty(text_layer_get_layer(distance_text_layer));
@@ -67,7 +68,8 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 1) {
       APP_LOG(APP_LOG_LEVEL_DEBUG, "END");
       current_time = 0;
-      app_timer_cancel(run_timer);
+
+      tick_timer_service_unsubscribe();
     }
 
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 2) {

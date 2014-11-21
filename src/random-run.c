@@ -136,6 +136,7 @@ static void init() {
 static void deinit() {
   text_layer_destroy(timer_text_layer);
   text_layer_destroy(distance_text_layer);
+  tick_timer_service_unsubscribe();
   window_destroy(window);
 }
 

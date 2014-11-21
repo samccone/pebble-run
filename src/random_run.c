@@ -1,4 +1,5 @@
-#include "pebble.h"
+#include <pebble.h>
+#include "util.h"
 #include "random_run.h"
 
 static Window *window;
@@ -13,33 +14,21 @@ enum unit8_t {
   KEY_MANEUVER
 };
 
-static void fill_top_rect(Layer *m, GContext *ctx) {
+void fill_top_rect(Layer *m, GContext *ctx) {
   graphics_context_set_fill_color(ctx, GColorBlack);
   GRect fillBounds = GRect(0, 0, 148, 20);
 
   graphics_fill_rect(ctx, fillBounds, 0, GCornerNone);
 }
 
-static void draw_top_rect() {
+void draw_top_rect() {
   GRect bounds = layer_get_frame(window_layer);
   Layer *rect_layer = layer_create(bounds);
   layer_set_update_proc(rect_layer, fill_top_rect);
   layer_add_child(window_layer, rect_layer);
 }
 
-void format_time(uint16_t timer_time, bool showHours, char* str, int str_len) {
-  int hours = timer_time / 3600;
-  int minutes = (showHours ? (timer_time % 3600) : timer_time) / 60;
-  int seconds = (showHours ? (timer_time % 3600) : timer_time) % 60;
-  if (showHours) {
-    snprintf(str, str_len, "%01d:%02d:%02d", hours, minutes, seconds);
-  }
-  else {
-    snprintf(str, str_len, "%02d:%02d", minutes, seconds);
-  }
-}
-
-static void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
+void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char formatted[9];
 
   format_time(current_time, current_time >= 3600, formatted, 9);
@@ -49,7 +38,7 @@ static void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
   current_time++;
 }
 
-static void in_received_handler(DictionaryIterator *iter, void *context) {
+void in_received_handler(DictionaryIterator *iter, void *context) {
     APP_LOG(APP_LOG_LEVEL_DEBUG, "App Message Synced");
 
     Tuple *distance;
@@ -86,11 +75,11 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
     }
 }
 
-static void in_dropped_handler(AppMessageResult reason, void *context) {
+void in_dropped_handler(AppMessageResult reason, void *context) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "App Message Sync Error %o", reason );
 }
 
-static void set_time_display(Layer *window_layer) {
+void set_time_display(Layer *window_layer) {
   GRect bounds = layer_get_frame(window_layer);
   timer_text_layer = text_layer_create((GRect){ .origin = { 0, 20 }, .size = bounds.size });
 
@@ -103,7 +92,7 @@ static void set_time_display(Layer *window_layer) {
   layer_add_child(window_layer, text_layer_get_layer(timer_text_layer));
 }
 
-static void set_distance_display(Layer *window_layer) {
+void set_distance_display(Layer *window_layer) {
   GRect bounds = layer_get_frame(window_layer);
   distance_text_layer = text_layer_create((GRect){ .origin = { 0, 100 }, .size = bounds.size });
 
@@ -115,7 +104,7 @@ static void set_distance_display(Layer *window_layer) {
   layer_add_child(window_layer, text_layer_get_layer(distance_text_layer));
 }
 
-static void init() {
+void init() {
   window = window_create();
   window_stack_push(window, true);
 
@@ -133,16 +122,9 @@ static void init() {
   app_message_open(inbound_size, outbound_size);
 }
 
-static void deinit() {
+void deinit() {
   text_layer_destroy(timer_text_layer);
   text_layer_destroy(distance_text_layer);
-  tick_timer_service_unsubscribe();
+      tick_timer_service_unsubscribe();
   window_destroy(window);
-}
-
-int main(void) {
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "RANDOM RUN INIT");
-  init();
-  app_event_loop();
-  deinit();
 }

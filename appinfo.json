@@ -1,0 +1,17 @@
+{
+  "uuid": "9a9f5927-f384-4bb0-bbe6-4b1b026c3ca5",
+  "shortName": "Random Run",
+  "longName": "Random RUn",
+  "companyName": "MojoTech",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}

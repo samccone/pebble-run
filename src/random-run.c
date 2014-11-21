@@ -27,7 +27,7 @@ static void draw_top_rect() {
   layer_add_child(window_layer, rect_layer);
 }
 
-void timer_time_str(uint16_t timer_time, bool showHours, char* str, int str_len) {
+void format_time(uint16_t timer_time, bool showHours, char* str, int str_len) {
   int hours = timer_time / 3600;
   int minutes = (showHours ? (timer_time % 3600) : timer_time) / 60;
   int seconds = (showHours ? (timer_time % 3600) : timer_time) % 60;
@@ -42,7 +42,7 @@ void timer_time_str(uint16_t timer_time, bool showHours, char* str, int str_len)
 static void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char formatted[9];
 
-  timer_time_str(current_time, current_time >= 3600, formatted, 9);
+  format_time(current_time, current_time >= 3600, formatted, 9);
 
   text_layer_set_text(timer_text_layer, formatted);
   layer_mark_dirty(text_layer_get_layer(timer_text_layer));
@@ -78,6 +78,11 @@ static void in_received_handler(DictionaryIterator *iter, void *context) {
 
       text_layer_set_text(distance_text_layer, distance->value->cstring);
       layer_mark_dirty(text_layer_get_layer(distance_text_layer));
+    }
+
+    if(dict_find(iter, KEY_COMMAND)->value->int8 == 3) {
+      APP_LOG(APP_LOG_LEVEL_DEBUG, "KEY_MANEUVER");
+      vibes_short_pulse();
     }
 }
 
@@ -135,6 +140,7 @@ static void deinit() {
 }
 
 int main(void) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "RANDOM RUN INIT");
   init();
   app_event_loop();
   deinit();

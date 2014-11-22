@@ -1,12 +1,12 @@
 #include <pebble.h>
-#include "util.h"
 #include "random_run.h"
+#include "timer.h"
+#include "util.h"
 
 static Window *window;
 static Layer *window_layer;
 static TextLayer *timer_text_layer;
 static TextLayer *distance_text_layer;
-uint16_t current_time = 0;
 
 enum unit8_t {
   KEY_COMMAND,
@@ -28,14 +28,13 @@ void draw_top_rect() {
   layer_add_child(window_layer, rect_layer);
 }
 
-void timer_tick(struct tm* tick_time, TimeUnits units_changed) {
+void update_timer_display(uint32_t tick) {
   static char formatted[9];
 
-  format_time(current_time, current_time >= 3600, formatted, 9);
+  format_time(tick, tick >= 3600, formatted, 9);
 
   text_layer_set_text(timer_text_layer, formatted);
   layer_mark_dirty(text_layer_get_layer(timer_text_layer));
-  current_time++;
 }
 
 void in_received_handler(DictionaryIterator *iter, void *context) {
@@ -45,20 +44,19 @@ void in_received_handler(DictionaryIterator *iter, void *context) {
 
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 0) {
       distance     = dict_find(iter, KEY_DISTANCE);
-      current_time = 0;
 
       APP_LOG(APP_LOG_LEVEL_DEBUG, "START %s", distance->value->cstring);
-      tick_timer_service_subscribe(SECOND_UNIT, &timer_tick);
+      start_timer(&update_timer_display);
 
       text_layer_set_text(distance_text_layer, distance->value->cstring);
       layer_mark_dirty(text_layer_get_layer(distance_text_layer));
     }
 
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 1) {
+      stop_timer();
+      clear_timer();
+      update_timer_display(0);
       APP_LOG(APP_LOG_LEVEL_DEBUG, "END");
-      current_time = 0;
-
-      tick_timer_service_unsubscribe();
     }
 
     if (dict_find(iter, KEY_COMMAND)->value->int8 == 2) {
@@ -116,7 +114,6 @@ void init() {
   app_message_register_inbox_received(in_received_handler);
   app_message_register_inbox_dropped(in_dropped_handler);
 
-
   const uint32_t inbound_size = app_message_inbox_size_maximum();
   const uint32_t outbound_size = 64;
   app_message_open(inbound_size, outbound_size);
@@ -125,6 +122,6 @@ void init() {
 void deinit() {
   text_layer_destroy(timer_text_layer);
   text_layer_destroy(distance_text_layer);
-      tick_timer_service_unsubscribe();
+  stop_timer();
   window_destroy(window);
 }

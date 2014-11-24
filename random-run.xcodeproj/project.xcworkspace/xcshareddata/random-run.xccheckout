@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3173B9D6-7D53-4E5E-AB53-B67CE4337823</string>
+	<key>IDESourceControlProjectName</key>
+	<string>random-run</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</key>
+		<string>ssh://github.com/samccone/pebble-run.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>random-run.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/samccone/pebble-run.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>random-run</string>
+		</dict>
+	</array>
+</dict>
+</plist>

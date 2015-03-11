@@ -1,17 +1,20 @@
 {
-  "uuid": "484b78ab-ab86-4f7e-9edd-d0c652490e87",
-  "shortName": "Random Run",
-  "longName": "Random RUn",
-  "companyName": "MojoTech",
-  "versionCode": 1,
-  "versionLabel": "1.0",
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": []
-  }
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "samccone@gmail.com",
+    "longName": "random-run-2",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "2",
+    "shortName": "random-run-2",
+    "uuid": "0efe30aa-b026-47ab-86f1-834dc561ac40",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
 }

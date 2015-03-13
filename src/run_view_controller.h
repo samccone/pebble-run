@@ -1,10 +1,10 @@
 #pragma once
+#include <run_menu_controller.h>
 #include <pebble.h>
   
 typedef struct {
   Window *window;
-  SimpleMenuLayer *menu_layer;
-  Layer *menu_background_layer;
+  RunMenuController *run_menu_controller;
   TextLayer *split_text_layer;
   TextLayer *time_text_layer;
   TextLayer *distance_text_layer;

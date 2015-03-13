@@ -63,8 +63,9 @@ void show_menu_prompt() {
   GRect bounding_frame = layer_get_frame(window_layer);
                                           
   sectionItems[0] = (SimpleMenuItem){.title="Run Home", .callback=(SimpleMenuLayerSelectCallback) &run_home_select};
-  sectionItems[1] = (SimpleMenuItem){.title="End Run", .callback=(SimpleMenuLayerSelectCallback) &end_run};
-  sectionItems[2] = (SimpleMenuItem){.title="Cancel", .callback=(SimpleMenuLayerSelectCallback) &cancel_menu};
+  sectionItems[1] = (SimpleMenuItem){.title="End Run", .callback=(SimpleMenuLayerSelectCallback) &end_run};  
+  sectionItems[2] = (SimpleMenuItem){.title="Cancel", .callback=(SimpleMenuLayerSelectCallback) &cancel_menu, .icon=gbitmap_create_with_resource(RESOURCE_ID_CANCEL_ICON)};
+  
   sections[0] = (SimpleMenuSection) {.items=sectionItems, .num_items=3};
   
   active_controller->menu = simple_menu_layer_create(

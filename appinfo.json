@@ -7,7 +7,13 @@
     "longName": "random-run-2",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/cancel.png",
+                "name": "CANCEL_ICON",
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "2",
     "shortName": "random-run-2",

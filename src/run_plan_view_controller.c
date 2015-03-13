@@ -9,6 +9,7 @@ static RunPlanViewController *activeController;
 RunPlanViewController* newRunPlanViewController(void (*onSubmitRunDistance)(int)) {
   RunPlanViewController* self = malloc(sizeof(RunPlanViewController));
   self->onSubmitRunDistance = onSubmitRunDistance;
+  self->run_distance=1;
   loadView(self);
   return self;  
 }

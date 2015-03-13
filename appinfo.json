@@ -9,6 +9,16 @@
     "resources": {
         "media": [
             {
+                "file": "images/back.png",
+                "name": "BACK",
+                "type": "png"
+            },
+            {
+                "file": "images/home.png",
+                "name": "RUN_HOME",
+                "type": "png"
+            },
+            {
                 "file": "images/cancel.png",
                 "name": "CANCEL_ICON",
                 "type": "png"

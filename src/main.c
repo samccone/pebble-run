@@ -1,24 +1,19 @@
 #include <pebble.h>
 #include <run_plan_view_controller.h>
+#include "run_view_controller.h"
 
-Window *distance_window;
-Window *run_window;
-RunPlanViewController* runPlanController;
+RunPlanViewController *runPlanController;
+RunViewController *runViewController;
 
 void handle_deinit(void) {
   destroy_run_plan(runPlanController);
-}
-
-void show_distance_select(void) {  
-}
-
-void destroy_distance_select(void) {
-
+  destroy_run_view(runViewController);
 }
 
 void onSubmitRunDistance(int distance) {
-  Window *run_window = window_create();  
-  window_stack_push(run_window, true);
+  runViewController = new_run_view_controller();
+  destroy_run_plan(runPlanController);
+  window_stack_push(runViewController->window, true);
 }
 
 int main(void) {

@@ -14,12 +14,17 @@ RunPlanViewController* newRunPlanViewController(void (*onSubmitRunDistance)(int)
 }
 
 void destroy_run_plan(RunPlanViewController *self) {
+  if (activeController == 0) {
+    return;
+  }
+  
   text_layer_destroy(self->distance_text_layer);
   text_layer_destroy(self->distance_inc_text_layer);
   text_layer_destroy(self->distance_dec_text_layer);
   text_layer_destroy(self->distance_action_text_layer);
   layer_destroy(self->distance_background_layer);
   
+  window_stack_remove(self->window, false);
   window_destroy(self->window);  
   activeController = 0;
   free(self);

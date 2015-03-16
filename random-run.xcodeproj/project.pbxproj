@@ -7,37 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1B2D30DEB14A149DA9DCBE /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 012986D5D2E64743903D0EAF /* util.c */; };
-		2CF27EBF24C94937850A92DD /* random_run.c in Sources */ = {isa = PBXBuildFile; fileRef = 00C0AE3A637E4F55BA33149F /* random_run.c */; };
-		6BF83FA043C440BE93BBD620 /* timer.c in Sources */ = {isa = PBXBuildFile; fileRef = D25DD4042EF7475484C3F732 /* timer.c */; };
-		7A88F65D73024486B1ACB570 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A4D74418056F434EB2AE123F /* main.c */; };
-		E9DEAD368A3A4A7796853197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B01C214C70B4EE9AF9128FD /* Foundation.framework */; };
+		E7BA78F31AB73B100080C57A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A4D74418056F434EB2AE123F /* main.c */; };
+		E7BA78F41AB73B100080C57A /* run_menu_controller.c in Sources */ = {isa = PBXBuildFile; fileRef = E7BA78E61AB7367E0080C57A /* run_menu_controller.c */; };
+		E7BA78F51AB73B100080C57A /* run_plan_view_controller.c in Sources */ = {isa = PBXBuildFile; fileRef = E7BA78E81AB7367E0080C57A /* run_plan_view_controller.c */; };
+		E7BA78F61AB73B100080C57A /* run_view_controller.c in Sources */ = {isa = PBXBuildFile; fileRef = E7BA78EA1AB7367E0080C57A /* run_view_controller.c */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXFileReference section */
-		00C0AE3A637E4F55BA33149F /* random_run.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = random_run.c; sourceTree = "<group>"; };
-		012986D5D2E64743903D0EAF /* util.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
-		32B64A17C70D4F7EAED436EF /* fake-iOS-target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fake-iOS-target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42961DAD7E7140EC91FD9A60 /* random_run.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = random_run.h; sourceTree = "<group>"; };
-		535CB20E91584E548D50396C /* appinfo.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = appinfo.json; sourceTree = "<group>"; };
-		6B01C214C70B4EE9AF9128FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8410CE553CC5403E8E783488 /* resources */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
-		9C7EE105BD5140DCA3B45AD8 /* util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		A4D74418056F434EB2AE123F /* main.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		D25DD4042EF7475484C3F732 /* timer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = timer.c; sourceTree = "<group>"; };
-		DAF5E61D39BE4D219C055298 /* timer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		7D046D8BAB0446349CDC60EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9DEAD368A3A4A7796853197 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		E7BA78EF1AB73A770080C57A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835C195D01D74202B2B3C7F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1686A2F8484A5A81AF941D;
+			remoteInfo = Pebble;
 		};
-/* End PBXFrameworksBuildPhase section */
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32B64A17C70D4F7EAED436EF /* fake-iOS-target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fake-iOS-target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535CB20E91584E548D50396C /* appinfo.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = appinfo.json; sourceTree = "<group>"; };
+		8410CE553CC5403E8E783488 /* resources */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		A4D74418056F434EB2AE123F /* main.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E7BA78E61AB7367E0080C57A /* run_menu_controller.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = run_menu_controller.c; sourceTree = "<group>"; };
+		E7BA78E71AB7367E0080C57A /* run_menu_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = run_menu_controller.h; sourceTree = "<group>"; };
+		E7BA78E81AB7367E0080C57A /* run_plan_view_controller.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; path = run_plan_view_controller.c; sourceTree = "<group>"; tabWidth = 2; };
+		E7BA78E91AB7367E0080C57A /* run_plan_view_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = run_plan_view_controller.h; sourceTree = "<group>"; };
+		E7BA78EA1AB7367E0080C57A /* run_view_controller.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = run_view_controller.c; sourceTree = "<group>"; };
+		E7BA78EB1AB7367E0080C57A /* run_view_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = run_view_controller.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		7107AE94A8294253B4E618B7 = {
@@ -62,12 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				A4D74418056F434EB2AE123F /* main.c */,
-				00C0AE3A637E4F55BA33149F /* random_run.c */,
-				D25DD4042EF7475484C3F732 /* timer.c */,
-				012986D5D2E64743903D0EAF /* util.c */,
-				42961DAD7E7140EC91FD9A60 /* random_run.h */,
-				DAF5E61D39BE4D219C055298 /* timer.h */,
-				9C7EE105BD5140DCA3B45AD8 /* util.h */,
+				E7BA78E61AB7367E0080C57A /* run_menu_controller.c */,
+				E7BA78E71AB7367E0080C57A /* run_menu_controller.h */,
+				E7BA78E81AB7367E0080C57A /* run_plan_view_controller.c */,
+				E7BA78E91AB7367E0080C57A /* run_plan_view_controller.h */,
+				E7BA78EA1AB7367E0080C57A /* run_view_controller.c */,
+				E7BA78EB1AB7367E0080C57A /* run_view_controller.h */,
 			);
 			name = sources;
 			path = src;
@@ -82,7 +79,7 @@
 			buildConfigurationList = B86F2B627FEA408C9E1D071D /* Build configuration list for PBXLegacyTarget "Pebble" */;
 			buildPhases = (
 			);
-			buildToolPath = "/Users/sam/pebble-dev/PebbleSDK-2.8/bin/pebble";
+			buildToolPath = "/Users/fcanas/pebble-dev/PebbleSDK-current/bin/pebble";
 			buildWorkingDirectory = "";
 			dependencies = (
 			);
@@ -97,12 +94,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE19697F5512463C95BD6669 /* Build configuration list for PBXNativeTarget "fake-iOS-target" */;
 			buildPhases = (
-				42EED9E94E984253A8DB6497 /* Sources */,
-				7D046D8BAB0446349CDC60EF /* Frameworks */,
+				E7BA78F11AB73A7B0080C57A /* ShellScript */,
+				E7BA78F21AB73B070080C57A /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E7BA78F01AB73A770080C57A /* PBXTargetDependency */,
 			);
 			name = "fake-iOS-target";
 			productName = "fake-iOS-target";
@@ -135,19 +133,43 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E7BA78F11AB73A7B0080C57A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$HOME/pebble-dev/PebbleSDK-current/bin/pebble install --phone=10.0.1.34\n# exit with an error to prevent compiling sources for the iOS target\nexit 1";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		42EED9E94E984253A8DB6497 /* Sources */ = {
+		E7BA78F21AB73B070080C57A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A88F65D73024486B1ACB570 /* main.c in Sources */,
-				2CF27EBF24C94937850A92DD /* random_run.c in Sources */,
-				6BF83FA043C440BE93BBD620 /* timer.c in Sources */,
-				1F1B2D30DEB14A149DA9DCBE /* util.c in Sources */,
+				E7BA78F31AB73B100080C57A /* main.c in Sources */,
+				E7BA78F41AB73B100080C57A /* run_menu_controller.c in Sources */,
+				E7BA78F51AB73B100080C57A /* run_plan_view_controller.c in Sources */,
+				E7BA78F61AB73B100080C57A /* run_view_controller.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7BA78F01AB73A770080C57A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1686A2F8484A5A81AF941D /* Pebble */;
+			targetProxy = E7BA78EF1AB73A770080C57A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5F36CAC38C364519B848DC76 /* Release */ = {
@@ -175,7 +197,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Users/sam/pebble-dev/PebbleSDK-2.8/Pebble/include",
+					"~/pebble-dev/PebbleSDK-current/Pebble/include",
 					build,
 				);
 				VALIDATE_PRODUCT = YES;
@@ -323,7 +345,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Users/sam/pebble-dev/PebbleSDK-2.8/Pebble/include",
+					"~/pebble-dev/PebbleSDK-current/Pebble/include",
 					build,
 				);
 				ONLY_ACTIVE_ARCH = YES;

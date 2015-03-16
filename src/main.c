@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include <run_plan_view_controller.h>
+#include "run_plan_view_controller.h"
 #include "run_view_controller.h"
 
 RunPlanViewController *runPlanController;

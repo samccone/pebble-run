@@ -10,31 +10,31 @@
 	<string>random-run</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</key>
-		<string>ssh://github.com/samccone/pebble-run.git</string>
+		<key>BB8E87636325B1F06D433B6B9850935E4642BAC2</key>
+		<string>https://github.com/fcanas/pebble-run.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>random-run.xcodeproj/project.xcworkspace</string>
+	<string>random-run.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</key>
+		<key>BB8E87636325B1F06D433B6B9850935E4642BAC2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/samccone/pebble-run.git</string>
+	<string>https://github.com/fcanas/pebble-run.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</string>
+	<string>BB8E87636325B1F06D433B6B9850935E4642BAC2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9227EC69-0AF5-417A-B4BD-DFFCE98559D8</string>
+			<string>BB8E87636325B1F06D433B6B9850935E4642BAC2</string>
 			<key>IDESourceControlWCCName</key>
-			<string>random-run</string>
+			<string>pebble-run</string>
 		</dict>
 	</array>
 </dict>
